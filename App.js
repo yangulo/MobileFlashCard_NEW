@@ -10,7 +10,7 @@ import Quiz from './components/Quiz'
 import AddCard from './components/AddCard'
 import Answer from './components/Answer'
 import FinalScore from './components/FinalScore'
-import { getTopics, setLocalNotification} from './utils/helpers'
+import { getTopics, setLocalNotification} from './utils/helpers' 
 
 function AppStatusBar ({backgroundColor, ...props}) {
   return (
@@ -69,22 +69,12 @@ const MainNavigator = StackNavigator({
     },
 })
 
-async function getiOSNotificationPermission() {
-  const { status } = await Permissions.getAsync(
-    Permissions.NOTIFICATIONS
-  );
-  if (status !== 'granted') {
-    await Permissions.askAsync(Permissions.NOTIFICATIONS);
-  }
-}
-
 export default class App extends React.Component {
 
   componentDidMount() {
-    getiOSNotificationPermission();
     setLocalNotification()
   }
-
+  
   render() {
     return (
       <View style={{flex: 1}}>
