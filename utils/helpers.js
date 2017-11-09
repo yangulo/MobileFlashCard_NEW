@@ -75,14 +75,6 @@ export function clearLocalNotification () {
     .then(Notifications.cancelAllScheduledNotificationsAsync)
 }
 
-// export function listenForNotifications() {
-//     Notifications.addListener(notification => {
-//       if (notification.origin === 'received' && Platform.OS === 'ios') {
-//           Alert.alert('Reminder!', "👋 don't forget to complete a quiz for today!");
-//       }
-//     });
-// }
-
 export function createNotification () {
     return {
       title: 'Reminder!',

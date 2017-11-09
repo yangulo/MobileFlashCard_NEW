@@ -10,7 +10,7 @@ import Quiz from './components/Quiz'
 import AddCard from './components/AddCard'
 import Answer from './components/Answer'
 import FinalScore from './components/FinalScore'
-import { getTopics, setLocalNotification, listenForNotifications } from './utils/helpers'
+import { getTopics, setLocalNotification} from './utils/helpers'
 
 function AppStatusBar ({backgroundColor, ...props}) {
   return (
@@ -83,10 +83,6 @@ export default class App extends React.Component {
   componentDidMount() {
     getiOSNotificationPermission();
     setLocalNotification()
-  }
-
-  componentWillMount() {
-    listenForNotifications();
   }
 
   render() {
