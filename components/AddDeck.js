@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, Text, Platform, StatusBar, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
-import { gray, white, purple, lightGray } from '../utils/colors'
+import { View, Text, TextInput, TouchableOpacity} from 'react-native'
 import { getTopics } from '../utils/helpers'
+import { Styles } from '../utils/style'
 
 export default class AddDeck extends React.Component {
   state={
@@ -20,50 +20,19 @@ export default class AddDeck extends React.Component {
 
   render() {
       return (
-          <View style={styles.container}>
+          <View style={Styles.Container}>
             <View >
-              <Text style={styles.Text}>What is the title of your new deck?</Text>
+              <Text style={Styles.Text}>What is the title of your new deck?</Text>
             </View>
             <View>
-              <TextInput style={styles.Input} placeholder="Deck title" value={this.state.title} onChangeText={(text) => this.setState({title: text})}/>
+              <TextInput width={1000} style={Styles.Input} placeholder="Deck title" value={this.state.title} onChangeText={(text) => this.setState({title: text})}/>
             </View>
-            <View style={styles.SpaceViews}>
+            <View style={Styles.SpaceViews}>
               <TouchableOpacity onPress={this.addTopicToDeck}>
-                <Text style={styles.Button}>Submit</Text>
+                <Text style={Styles.Button}>Submit</Text>
               </TouchableOpacity>
             </View>
           </View>
         )
     }
   }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: lightGray,
-    },
-    Text: {
-      fontSize: 50,
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-    },
-    Button:{
-      fontSize: 22,
-      marginBottom:20,
-    },
-    SpaceViews:{
-      paddingTop:30
-    },
-    Subtitle:{
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-    },
-    Input:{
-      paddingTop: 20
-    }
-  })

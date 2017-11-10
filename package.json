@@ -22,6 +22,7 @@
     "expo": "^21.0.0",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",
+    "react-native-autogrow-textinput": "^4.1.1",
     "react-native-local-notifications": "^1.0.0",
     "react-native-notifications": "^1.1.17",
     "react-navigation": "^1.0.0-beta.15"

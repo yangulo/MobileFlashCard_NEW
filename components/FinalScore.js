@@ -1,14 +1,14 @@
 import React from 'react'
 import { Constants } from 'expo'
-import { View, Text, Platform, StatusBar, StyleSheet, TouchableOpacity} from 'react-native'
-import { gray, white, purple, lightGray } from '../utils/colors'
+import { View, Text} from 'react-native'
+import { Styles } from '../utils/style'
 import Button from './Button'
 import { NavigationActions } from 'react-navigation'
 
 export default class FinalScore extends React.Component {
   static navigationOptions = {
     title: 'Final Score',
-  };
+  }
   
     toDeck = () => {
         const topic = this.props.navigation.state.params.topic
@@ -31,44 +31,19 @@ export default class FinalScore extends React.Component {
     render() {
         const topic = this.props.navigation.state.params.topic
         return (
-            <View style={styles.container}>
-                <Text style={styles.Text}>Final Score</Text>
-                <Text tyle={styles.Subtitle}>Your final score is {topic.score} out of {topic.questions.length}</Text>
+            <View style={Styles.Container}>
+                <Text style={Styles.Text}>Final Score</Text>
+                <Text tyle={Styles.Subtitle}>Your final score is {topic.score} out of {topic.questions.length}</Text>
                 <View>
-                    <Button style={styles.button} onPress={this.toQuiz}>Restart Quiz</Button>
+                    <Button style={Styles.Button} onPress={this.toQuiz}>Restart Quiz</Button>
                 </View>
                 <View>
-                    <Button style={styles.button} onPress={this.toDeck}>Back to {topic.title}</Button>
+                    <Button style={Styles.Button} onPress={this.toDeck}>Back to {topic.title}</Button>
                 </View>
                 <View>
-                    <Button style={styles.button} onPress={this.toHome}>Back to Decks</Button>
+                    <Button style={Styles.Button} onPress={this.toHome}>Back to Decks</Button>
                 </View>
             </View>
         )
-        }
     }
-
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: lightGray,
-        },
-        Text: {
-            fontSize: 50,
-        },
-        button:{
-            fontSize: 22,
-            marginBottom:20,
-        },
-        SpaceViews:{
-            paddingTop:50
-        },
-        Subtitle:{
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-        }
-    })
+}

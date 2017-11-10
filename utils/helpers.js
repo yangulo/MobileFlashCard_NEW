@@ -106,10 +106,6 @@ export async function setLocalNotification () {
                   tomorrow.setHours(20)
                   tomorrow.setMinutes(0)
 
-                //   To test in 3 seconds
-                //   let tomorrow = Date.now()
-                //   tomorrow += 3000
-
                   Notifications.scheduleLocalNotificationAsync(
                     createNotification(),
                     {
